@@ -1,15 +1,12 @@
 {
-  "short_name": "DFG",
-  "name": "Dynamic Form Generator",
-  "description": "A web application for dynamic form generation.",
-  "author": "Ahmed FARHAT",
-  "version": "1.0.0",
-  "license": "MIT",
+  "short_name": "Arsela Internship",
+  "name": "Arsela Internship",
+  "version": "0.5.0",
   "homepage_url": ".",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "theme_color": "#d0bdf4",
+  "background_color": "#e6eaf3",
   "icons": [
     {
       "src": "logo512.png",
