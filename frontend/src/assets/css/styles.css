@@ -1,0 +1,118 @@
+:root {
+  --primary-color: #8559b1;
+  --light-primary-color: #d0bdf4;
+  --secondary-color: #a0d2eb;
+  --light-color: #e6eaf3;
+  --dark-color: #4a4d60;
+  --error-color: #ff4444;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  overflow: hidden;
+}
+
+ul {
+  list-style: none !important;
+}
+
+a {
+  text-decoration: none !important;
+  -webkit-user-drag: none !important;
+  color: var(--dark-color);
+}
+
+p {
+  font-weight: 400;
+}
+
+img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1px;
+}
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -webkit-user-select: none; /* Safari and Chrome */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--light-primary-color);
+}
+
+header .logo-container {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+header .logo-container img {
+  width: 100%;
+  height: 100%;
+}
+
+header .logo-container div {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul li:first-of-type {
+  margin-right: 40px;
+}
+
+header nav ul li a {
+  padding: 5px 10px;
+  display: inline-block;
+  color: var(--dark-color);
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  opacity: 0.6;
+}
+
+header nav ul li a.active {
+  border-bottom-color: var(--dark-color);
+  opacity: 1;
+}
+
+.app-content {
+  padding: 20px;
+}

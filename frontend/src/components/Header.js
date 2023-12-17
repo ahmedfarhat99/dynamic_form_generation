@@ -3,15 +3,16 @@ import images from "./images";
 
 const Header = () => {
   return (
-    <header>
+    <header className="unselectable">
       <Link to="/" className="logo-container">
         <img src={images.appLogo} alt="Logo" className="app-logo" />
+        <div>Arsela Internship</div>
       </Link>
       <nav>
-        <ul id="menu-list">
+        <ul>
           <li>
             <NavLink end to="/">
-              Home
+              Apply
             </NavLink>
           </li>
           <li>
