@@ -23,7 +23,6 @@ body {
   font-family: "Poppins", sans-serif;
   color: var(--dark-color);
   background-color: var(--light-color);
-  overflow: hidden;
 }
 
 ul {
@@ -274,6 +273,12 @@ header nav ul li a.active {
   font-size: 23px;
 }
 
-form {
+.home-container form {
   margin-top: 30px;
+}
+
+.home-container form .input-group .input-group-text {
+  min-width: 45px;
+  display: flex;
+  justify-content: center;
 }
