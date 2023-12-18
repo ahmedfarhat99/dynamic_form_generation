@@ -2,33 +2,38 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import icons from "./icons";
 
-const AddFields = ({ fields, setFields, score, setScore }) => {
+const AddFields = ({
+  fields,
+  score,
+  setScore,
+  selectedFields,
+  setSelectedFields,
+}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [selectedFields, setSelectedFields] = useState([]);
 
-  const handleAdd = async (e) => {
-    setFields((prevFields) => [
-      ...prevFields,
-      ...selectedFields.map((field) => ({
-        ...field,
-        input: `newField${prevFields.length + 1}`,
-      })),
-    ]);
+//   const handleSubmit = async (e) => {
+//     setFields((prevFields) => [
+//       ...prevFields,
+//       ...selectedFields.map((field) => ({
+//         ...field,
+//         input: `newField${prevFields.length + 1}`,
+//       })),
+//     ]);
 
-    // Calculate the sum of points
-    const totalPoints = selectedFields.reduce(
-      (total, field) => total + field.points,
-      0
-    );
+//     // Calculate the sum of points
+//     const totalPoints = selectedFields.reduce(
+//       (total, field) => total + field.points,
+//       0
+//     );
 
-    // Update the score state
-    setScore(score + totalPoints);
+//     // Update the score state
+//     setScore(score + totalPoints);
 
-    // Close the modal
-    handleClose();
-  };
+//     // Close the modal
+//     handleClose();
+//   };
 
   const handleFieldToggle = (field) => {
     setSelectedFields((prevSelected) => {
@@ -46,6 +51,15 @@ const AddFields = ({ fields, setFields, score, setScore }) => {
         return [...prevSelected, field];
       }
     });
+
+    // Calculate the sum of points
+    const totalPoints = selectedFields.reduce(
+      (total, field) => total + field.points,
+      0
+    );
+
+    // Update the score state
+    setScore(score + totalPoints);
   };
 
   return (
@@ -61,7 +75,7 @@ const AddFields = ({ fields, setFields, score, setScore }) => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Add fields</Modal.Title>
+          <Modal.Title>Pick fields</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="form-check">
@@ -117,12 +131,6 @@ const AddFields = ({ fields, setFields, score, setScore }) => {
             </div>
           ))}
         </Modal.Body>
-        <Modal.Footer>
-          <button className="btn btn-default" onClick={handleClose}>
-            Cancel
-          </button>
-          <button className="btn btn-success">Add</button>
-        </Modal.Footer>
       </Modal>
     </section>
   );
