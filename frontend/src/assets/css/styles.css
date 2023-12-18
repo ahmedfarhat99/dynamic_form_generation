@@ -123,8 +123,7 @@ header nav ul li a.active {
 }
 
 .participants-container h1,
-.participant-container h1,
-.home-container h1 {
+.participant-container h1 {
   margin-bottom: 30px;
   color: var(--dark-color);
 }
@@ -241,4 +240,40 @@ header nav ul li a.active {
 .participants-container .table-container table .loader-container div span {
   font-weight: 300;
   font-size: 13px;
+}
+
+.home-container .general {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-container .general h1 {
+  color: var(--dark-color);
+}
+
+.home-container .general button {
+  padding: 6px 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.home-container .general button:hover {
+  background: var(--bs-success);
+  color: white;
+}
+
+.home-container .general button:hover span {
+  color: white;
+}
+
+.home-container .general button:active {
+  scale: 0.9;
+}
+
+.home-container .general button span {
+  font-size: 23px;
+}
+
+form {
+  margin-top: 30px;
 }
