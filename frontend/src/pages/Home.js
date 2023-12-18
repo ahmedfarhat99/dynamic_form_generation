@@ -24,7 +24,7 @@ const Home = () => {
       input: "degree",
       title: "Degree",
       type: "select",
-      options: ["License", "Master"],
+      options: ["Bachelor", "Master"],
       points: 5,
     },
     { input: "fieldOfStudy", title: "Field of Study", type: "text", points: 5 },
