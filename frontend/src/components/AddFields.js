@@ -13,28 +13,6 @@ const AddFields = ({
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-//   const handleSubmit = async (e) => {
-//     setFields((prevFields) => [
-//       ...prevFields,
-//       ...selectedFields.map((field) => ({
-//         ...field,
-//         input: `newField${prevFields.length + 1}`,
-//       })),
-//     ]);
-
-//     // Calculate the sum of points
-//     const totalPoints = selectedFields.reduce(
-//       (total, field) => total + field.points,
-//       0
-//     );
-
-//     // Update the score state
-//     setScore(score + totalPoints);
-
-//     // Close the modal
-//     handleClose();
-//   };
-
   const handleFieldToggle = (field) => {
     setSelectedFields((prevSelected) => {
       const isFieldSelected = prevSelected.some(
@@ -42,24 +20,17 @@ const AddFields = ({
       );
 
       if (isFieldSelected) {
+        setScore(score - field.points);
         // If the field is already selected, remove it
         return prevSelected.filter(
           (selected) => selected.input !== field.input
         );
       } else {
+        setScore(score + field.points);
         // If the field is not selected, add it
         return [...prevSelected, field];
       }
     });
-
-    // Calculate the sum of points
-    const totalPoints = selectedFields.reduce(
-      (total, field) => total + field.points,
-      0
-    );
-
-    // Update the score state
-    setScore(score + totalPoints);
   };
 
   return (
@@ -68,12 +39,7 @@ const AddFields = ({
         <span className="icon">{icons.add}</span>
       </button>
 
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
+      <Modal show={show} onHide={handleClose} keyboard={false}>
         <Modal.Header closeButton>
           <Modal.Title>Pick fields</Modal.Title>
         </Modal.Header>

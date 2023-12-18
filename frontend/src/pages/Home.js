@@ -5,6 +5,9 @@ import AddFields from "../components/AddFields";
 const Home = () => {
   const [error, setError] = useState(null);
   const [score, setScore] = useState(75);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
   const [fields, setFields] = useState([
     { input: "phone", title: "Phone Number", type: "tel", points: 15 },
     { input: "resume", title: "Resume", type: "url", points: 15 },
@@ -40,17 +43,6 @@ const Home = () => {
     },
   ]);
   const [selectedFields, setSelectedFields] = useState([]);
-
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-
-  const handleRemoveField = (index) => {
-    setFields((prevFields) => [
-      ...prevFields.slice(0, index),
-      ...prevFields.slice(index + 1),
-    ]);
-  };
 
   const handleChange = (index, value, prop) => {
     setFields((prevFields) => [
@@ -172,13 +164,6 @@ const Home = () => {
                 placeholder={field.title}
               />
             )}
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              onClick={() => handleRemoveField(index)}
-            >
-              Remove
-            </button>
           </div>
         ))}
         {error && (

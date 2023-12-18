@@ -12,7 +12,7 @@ const Header = () => {
         <ul>
           <li>
             <NavLink end to="/">
-              Apply
+              Register
             </NavLink>
           </li>
           <li>
