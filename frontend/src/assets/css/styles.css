@@ -122,61 +122,69 @@ header nav ul li a.active {
   padding: 20px;
 }
 
-.particimants-container h1 {
+.participants-container h1,
+.participant-container h1,
+.home-container h1 {
   margin-bottom: 30px;
+  color: var(--dark-color);
 }
 
-.particimants-container .table-container {
+.participants-container .table-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-.particimants-container .table-container table {
+.participants-container .table-container table {
   margin-bottom: 5px;
   width: 100%;
-  border-color: var(--secondary-color);
+  border-color: #a3a3a3;
   color: var(--dark-color);
   border-collapse: collapse;
   border-spacing: 0;
   background-color: #dfdfdf;
 }
 
-.particimants-container .table-container table tr td,
-.particimants-container .table-container table tr th {
+.participants-container .table-container table tr td,
+.participants-container .table-container table tr th {
   vertical-align: middle;
   text-align: center;
   padding: 5px 10px;
+  color: var(--dark-color);
   /* border: 1px solid var(--dark-color); */
 }
 
-.particimants-container .table-container table tr th {
+.participants-container .table-container table tr th {
   font-size: 15px;
   font-weight: 700;
 }
 
-.particimants-container .table-container table tr td {
+.participants-container .table-container table tr td {
   font-size: 13px;
   font-weight: 500;
 }
 
-.particimants-container .table-container table tr th {
+.participants-container .table-container table tr:last-of-type {
+  border-bottom-color: transparent;
+}
+
+.participants-container .table-container table tr th {
   white-space: nowrap;
 }
 
-.particimants-container .table-container table .actions-content {
+.participants-container .table-container table .actions-content {
   text-align: center;
   min-width: 100px;
 }
 
-.particimants-container .table-container table .actions-content .btn {
+.participants-container .table-container table .actions-content .btn {
   padding-inline: 6px;
 }
 
-.particimants-container .table-container table .actions-content .btn:hover {
+.participants-container .table-container table .actions-content .btn:hover {
   background: #ffffff;
 }
 
-.particimants-container
+.participants-container
   .table-container
   table
   .actions-content
@@ -184,12 +192,12 @@ header nav ul li a.active {
   margin-right: 5px;
 }
 
-.particimants-container .table-container table .photo-content span {
+.participants-container .table-container table .photo-content span {
   font-size: 40px;
   color: #a3a3a3;
 }
 
-.particimants-container .table-container table .photo-content img {
+.participants-container .table-container table .photo-content img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -197,40 +205,40 @@ header nav ul li a.active {
   padding-top: 0;
 }
 
-.particimants-container .table-container table .short-action:hover {
+.participants-container .table-container table .short-action:hover {
   text-decoration: underline;
 }
 
-.particimants-container .table-container table .noData-container div {
+.participants-container .table-container table .noData-container div {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.particimants-container .table-container table .noData-container div img {
+.participants-container .table-container table .noData-container div img {
   opacity: 0.7;
   width: 150px;
   height: auto;
 }
 
-.particimants-container .table-container table .noData-container div span {
+.participants-container .table-container table .noData-container div span {
   font-weight: 300;
   font-size: 13px;
 }
 
-.particimants-container .table-container table .loader-content {
+.participants-container .table-container table .loader-content {
   text-align: center;
 }
 
-.particimants-container .table-container table .loader-container div {
+.participants-container .table-container table .loader-container div {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.particimants-container .table-container table .loader-container div span {
+.participants-container .table-container table .loader-container div span {
   font-weight: 300;
   font-size: 13px;
 }

@@ -4,6 +4,7 @@ import moment from "moment";
 import Loader from "../components/Loader";
 import images from "../components/images";
 import icons from "../components/icons";
+import DeleteParticipant from "../components/DeleteParticipant";
 
 const Participants = ({ loading, setLoading }) => {
   const [participantsList, setParticipantsList] = useState([]);
@@ -42,9 +43,12 @@ const Participants = ({ loading, setLoading }) => {
           >
             <span className="icon">{icons.openExternal}</span>
           </Link>
-          <button className="btn text-danger">
-            <span className="icon">{icons.delete}</span>
-          </button>
+          <DeleteParticipant
+            setParticipantsList={setParticipantsList}
+            dataId={participantItem._id}
+            firstName={participantItem.firstName}
+            lastName={participantItem.lastName}
+          />
         </td>
         <td className="photo-content">
           {participantItem.photo ? (
@@ -120,7 +124,7 @@ const Participants = ({ loading, setLoading }) => {
   };
 
   return (
-    <div className="particimants-container">
+    <div className="participants-container">
       <h1>Participants</h1>
       <div className="table-container">
         <table className="table table-hover">
