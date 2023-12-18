@@ -282,3 +282,12 @@ header nav ul li a.active {
   display: flex;
   justify-content: center;
 }
+
+.home-container form p {
+  font-size: 14px;
+  margin-top: -5px;
+}
+
+.home-container form p .icon {
+  font-size: 18px;
+}

@@ -53,7 +53,7 @@ const AddFields = ({
               disabled
             />
             <label className="form-check-label" htmlFor="firstName">
-              First Name (25 points)
+              <b>First Name</b> (25 points)
             </label>
           </div>
           <div className="form-check">
@@ -65,7 +65,7 @@ const AddFields = ({
               disabled
             />
             <label className="form-check-label" htmlFor="lastName">
-              Last Name (25 points)
+              <b>Last Name</b> (25 points)
             </label>
           </div>
           <div className="form-check">
@@ -77,7 +77,7 @@ const AddFields = ({
               disabled
             />
             <label className="form-check-label" htmlFor="email">
-              Email (25 points)
+              <b>Email</b> (25 points)
             </label>
           </div>
           {fields.map((field) => (
@@ -92,7 +92,7 @@ const AddFields = ({
                 onChange={() => handleFieldToggle(field)}
               />
               <label className="form-check-label" htmlFor={field.input}>
-                {field.title} ({field.points} points)
+                <b>{field.title}</b> ({field.points} points)
               </label>
             </div>
           ))}

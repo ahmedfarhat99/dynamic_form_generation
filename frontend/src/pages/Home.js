@@ -56,7 +56,7 @@ const Home = () => {
     e.preventDefault();
 
     const participant = {};
-    fields.forEach((field) => {
+    selectedFields.forEach((field) => {
       participant[field.input] = "";
     });
 
@@ -169,7 +169,7 @@ const Home = () => {
         {error && (
           <p className="mb-2 text-danger">
             <span className="icon d-inline-block me-1">{icons.error}</span>
-            {"error"}
+            {error}
           </p>
         )}
         <button type="submit" className="btn btn-primary w-100">
