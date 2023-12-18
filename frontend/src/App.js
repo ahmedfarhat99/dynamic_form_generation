@@ -1,9 +1,13 @@
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Participants from "./pages/Participants";
+import Participant from "./pages/Participant";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <div className="App">
       <Router>
@@ -11,7 +15,18 @@ function App() {
         <div className="app-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/participants" element={<Participants />} />
+            <Route
+              path="/participants"
+              element={
+                <Participants loading={loading} setLoading={setLoading} />
+              }
+            />
+            <Route
+              path="/participants/:id"
+              element={
+                <Participant loading={loading} setLoading={setLoading} />
+              }
+            />
             <Route path="*" element={<Home />} />
           </Routes>
         </div>

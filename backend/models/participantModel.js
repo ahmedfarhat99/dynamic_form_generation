@@ -19,12 +19,13 @@ const participantSchema = mongoose.Schema(
       trim: true,
       required: true,
     },
+    phone: String,
     resume: {
       type: String,
       trim: true,
       required: false,
     },
-    points: {
+    score: {
       type: Number,
       default: 0,
       required: true,
@@ -44,7 +45,6 @@ const participantSchema = mongoose.Schema(
     coverLetter: String,
     photo: String,
     birthDate: Date,
-    phone: String,
     address: String,
     postalCode: String,
     city: String,
