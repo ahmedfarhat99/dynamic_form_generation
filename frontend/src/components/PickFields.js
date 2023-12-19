@@ -36,7 +36,7 @@ const PickFields = ({
   return (
     <section className="d-inline-block">
       <button className="btn text-success border-success" onClick={handleShow}>
-        <span className="icon">{icons.add}</span>
+        <span className="icon">{icons.pick}</span>
       </button>
 
       <Modal show={show} onHide={handleClose} keyboard={false}>

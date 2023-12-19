@@ -66,102 +66,102 @@ const Participant = ({ loading, setLoading }) => {
         </div>
       ) : participantItem ? (
         <div className="content row">
-          <div className="col-6">
+          <div className="col-7">
             <h1>
               {participantItem.firstName + " " + participantItem.lastName}
             </h1>
             <DetailItem label="Email" value={participantItem.email} />
-            <DetailItem
-              label="Phone Number"
-              value={participantItem.phone ? participantItem.phone : "-"}
-            />
-            <DetailItem
-              label="Age"
-              value={
-                participantItem.birthDate
-                  ? getAge(participantItem.birthDate)
-                  : "-"
-              }
-            />
-            <DetailItem
-              label="Address"
-              value={participantItem.address ? participantItem.address : "-"}
-            />
-            <DetailItem
-              label="Postal Code"
-              value={
-                participantItem.postalCode ? participantItem.postalCode : "-"
-              }
-            />
-            <DetailItem
-              label="City"
-              value={participantItem.city ? participantItem.city : "-"}
-            />
-            <DetailItem
-              label="Country"
-              value={participantItem.country ? participantItem.country : "-"}
-            />
-            <DetailItem
-              label="Degree"
-              value={participantItem.degree ? participantItem.degree : "-"}
-            />
-            <DetailItem
-              label="Field of Study"
-              value={
-                participantItem.fieldOfStudy
-                  ? participantItem.fieldOfStudy
-                  : "-"
-              }
-            />
-            <DetailItem
-              label="University"
-              value={
-                participantItem.university ? participantItem.university : "-"
-              }
-            />
-            <DetailItem
-              label="Possible Start Date"
-              value={
-                participantItem.possibleStartDate
-                  ? moment(participantItem.possibleStartDate).format(
-                      "MMMM Do, YYYY"
-                    )
-                  : "-"
-              }
-            />
-            <div className="links d-flex justify-content-center mb-3">
-              <LinkItem icon="linkedin" value={participantItem.linkedin} />
-              <LinkItem icon="github" value={participantItem.github} />
-              <LinkItem icon="portfolio" value={participantItem.portfolio} />
-            </div>
-            {participantItem.resume && (
-              <div className="d-flex justify-content-center">
-                <a
-                  className="resume btn"
-                  href={participantItem.resume}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span className="icon">{icons.download}</span> Download
-                </a>
+            {participantItem.phone && (
+              <DetailItem label="Phone Number" value={participantItem.phone} />
+            )}
+            {participantItem.birthDate && (
+              <DetailItem
+                label="Age"
+                value={getAge(participantItem.birthDate)}
+              />
+            )}
+            {participantItem.address && (
+              <DetailItem label="Address" value={participantItem.address} />
+            )}
+            {participantItem.postalCode && (
+              <DetailItem
+                label="Postal Code"
+                value={participantItem.postalCode}
+              />
+            )}
+            {participantItem.city && (
+              <DetailItem label="City" value={participantItem.city} />
+            )}
+            {participantItem.country && (
+              <DetailItem label="Country" value={participantItem.country} />
+            )}
+            {participantItem.degree && (
+              <DetailItem label="Degree" value={participantItem.degree} />
+            )}
+            {participantItem.fieldOfStudy && (
+              <DetailItem
+                label="Field of Study"
+                value={participantItem.fieldOfStudy}
+              />
+            )}
+            {participantItem.university && (
+              <DetailItem
+                label="University"
+                value={participantItem.university}
+              />
+            )}
+            {participantItem.possibleStartDate && (
+              <DetailItem
+                label="Possible Start Date"
+                value={moment(participantItem.possibleStartDate).format(
+                  "MMMM Do, YYYY"
+                )}
+              />
+            )}
+            {(participantItem.linkedin ||
+              participantItem.github ||
+              participantItem.portfolio) && (
+              <div className="links d-flex align-items-center">
+                {participantItem.linkedin && (
+                  <LinkItem icon="linkedin" value={participantItem.linkedin} />
+                )}
+                {participantItem.github && (
+                  <LinkItem icon="github" value={participantItem.github} />
+                )}
+                {participantItem.portfolio && (
+                  <LinkItem
+                    icon="portfolio"
+                    value={participantItem.portfolio}
+                  />
+                )}
               </div>
             )}
           </div>
-          <div className="col-6">
-            <div className="picture">
+          <div className="col-5">
+            <div className="picture mb-3">
               {participantItem.photo ? (
                 <img src={participantItem.photo} alt="Participant" />
               ) : (
                 <span className="icon">{icons.defaultUser}</span>
               )}
             </div>
-            {participantItem.coverLetter && (
-              <div className="cover-letter">
-                <h3>Cover Letter</h3>
-                <p>{participantItem.coverLetter}</p>
-              </div>
+            {participantItem.resume && (
+              <a
+                className="resume btn d-flex align-items-center justify-content-center"
+                href={participantItem.resume}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="icon">{icons.download}</span> Download
+              </a>
             )}
           </div>
+          {participantItem.coverLetter && (
+            <div className="cover-letter">
+              <h4>Cover Letter</h4>
+              <p>{participantItem.coverLetter}</p>
+            </div>
+          )}
         </div>
       ) : (
         <div className="noData-container">

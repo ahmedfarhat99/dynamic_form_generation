@@ -4,9 +4,6 @@
   --secondary-color: #a0d2eb;
   --light-color: #e6eaf3;
   --dark-color: #4a4d60;
-  --error-color: #ff4444;
-  --success-color: #28a745;
-  --warning-color: #ffc107;
 }
 
 * {
@@ -241,6 +238,8 @@ header nav ul li a.active {
   font-size: 13px;
 }
 
+/* HOME CONTAINER */
+
 .home-container .general {
   display: flex;
   justify-content: space-between;
@@ -290,4 +289,93 @@ header nav ul li a.active {
 
 .home-container form p .icon {
   font-size: 18px;
+}
+
+.home-container form .remove {
+  padding-inline: 8px;
+}
+
+.home-container form .remove .icon {
+  font-size: 20px;
+}
+
+/* PARTICIPANT CONTAINER */
+
+.participant-container .content .detail-label {
+  color: var(--dark-color);
+}
+
+.participant-container .content .detail-value {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.participant-container .content .picture {
+  width: 100%;
+  height: auto;
+}
+
+.participant-container .content .picture img {
+  width: 100%;
+  height: 100%;
+}
+
+.participant-container .content .picture .icon {
+  font-size: 350px;
+  color: #a3a3a3;
+}
+
+.participant-container .content .links a {
+  font-size: 34px;
+  margin-right: 9px;
+  color: #a3a3a3;
+  transition: all 0.2s ease-in-out;
+}
+
+.participant-container .content .links a:last-of-type {
+  margin-right: 0;
+  font-size: 38px;
+}
+
+.participant-container .content .links a:hover {
+  color: var(--primary-color);
+}
+
+.participant-container .content .links a:active {
+  scale: 0.95;
+}
+
+.participant-container .content .resume {
+  font-weight: bold;
+  border-color: var(--dark-color);
+  border-radius: 0;
+  transition: all 0.2s ease-in-out;
+  color: var(--dark-color);
+}
+
+.participant-container .content .resume .icon {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.participant-container .content .resume:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.participant-container .content .resume:active {
+  scale: 0.95;
+}
+
+.participant-container .content .cover-letter {
+  color: var(--dark-color);
+  width: 100%;
+  margin-top: 20px;
+}
+
+.participant-container .content .cover-letter p {
+  margin-top: 10px;
+  /* white-space: pre-line; */
+  white-space: pre-wrap;
 }

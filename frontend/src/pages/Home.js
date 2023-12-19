@@ -168,7 +168,7 @@ const Home = () => {
                 value={field.inputValue}
                 className="form-control"
                 placeholder={field.title}
-                rows="3"
+                rows="5"
               />
             ) : field.type === "select" ? (
               <select
@@ -205,11 +205,11 @@ const Home = () => {
               />
             )}
             <button
-              className="btn btn-outline-secondary"
+              className="btn btn-outline-secondary remove"
               type="button"
               onClick={() => handleRemove(field)}
             >
-              Remove
+              <span className="icon">{icons.close}</span>
             </button>
           </div>
         ))}
