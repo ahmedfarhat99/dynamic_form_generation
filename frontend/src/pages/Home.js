@@ -1,6 +1,6 @@
 import { useState } from "react";
 import icons from "../components/icons";
-import AddFields from "../components/AddFields";
+import PickFields from "../components/PickFields";
 
 const Home = () => {
   const [error, setError] = useState(null);
@@ -100,7 +100,7 @@ const Home = () => {
     <div className="home-container">
       <div className="general">
         <h1>Join us ({score} points)</h1>
-        <AddFields
+        <PickFields
           fields={fields}
           score={score}
           setScore={setScore}
@@ -115,6 +115,7 @@ const Home = () => {
             <input
               type="text"
               required
+              id="firstName"
               title="First Name"
               onChange={(e) => setFirstName(e.target.value)}
               value={firstName}
@@ -127,6 +128,7 @@ const Home = () => {
             <input
               type="text"
               required
+              id="lastName"
               title="Last Name"
               onChange={(e) => setLastName(e.target.value)}
               value={lastName}
@@ -140,12 +142,13 @@ const Home = () => {
           <input
             type="email"
             required
+            autoComplete="true"
+            id="email"
             title="Email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             className="form-control"
             placeholder="Email"
-            id="email"
           />
         </div>
         {selectedFields.map((field, index) => (
@@ -154,6 +157,7 @@ const Home = () => {
             {field.type === "textarea" ? (
               <textarea
                 required
+                id={field.input}
                 title={field.title}
                 onChange={(e) =>
                   handleChange(index, e.target.value, "inputValue")
@@ -168,6 +172,7 @@ const Home = () => {
                 className="form-select"
                 title={field.title}
                 required
+                id={field.input}
                 onChange={(e) =>
                   handleChange(index, e.target.value, "inputValue")
                 }
@@ -184,6 +189,7 @@ const Home = () => {
               <input
                 type={field.type}
                 required
+                id={field.input}
                 title={field.title}
                 onChange={(e) =>
                   handleChange(index, e.target.value, "inputValue")

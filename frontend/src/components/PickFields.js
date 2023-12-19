@@ -2,7 +2,7 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import icons from "./icons";
 
-const AddFields = ({
+const PickFields = ({
   fields,
   score,
   setScore,
@@ -102,4 +102,4 @@ const AddFields = ({
   );
 };
 
-export default AddFields;
+export default PickFields;
