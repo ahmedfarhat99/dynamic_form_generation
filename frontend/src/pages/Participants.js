@@ -39,6 +39,7 @@ const Participants = ({ loading, setLoading }) => {
           <Link
             to={`/participants/${participantItem._id}`}
             target="_blank"
+            rel="noreferrer"
             className="btn text-primary"
           >
             <span className="icon">{icons.openExternal}</span>
@@ -66,6 +67,7 @@ const Participants = ({ loading, setLoading }) => {
             <Link
               to={participantItem.resume}
               target="_blank"
+              rel="noreferrer"
               className="text-primary"
             >
               <span className="short-action">Download</span>
@@ -79,6 +81,7 @@ const Participants = ({ loading, setLoading }) => {
             <Link
               to={participantItem.linkedin}
               target="_blank"
+              rel="noreferrer"
               className="text-primary"
             >
               <span className="short-action">Open</span>
@@ -92,6 +95,7 @@ const Participants = ({ loading, setLoading }) => {
             <Link
               to={participantItem.github}
               target="_blank"
+              rel="noreferrer"
               className="text-primary"
             >
               <span className="short-action">Open</span>
@@ -105,6 +109,7 @@ const Participants = ({ loading, setLoading }) => {
             <Link
               to={participantItem.portfolio}
               target="_blank"
+              rel="noreferrer"
               className="text-primary"
             >
               <span className="short-action">Open</span>
