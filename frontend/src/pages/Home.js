@@ -45,29 +45,52 @@ const Home = () => {
   const [selectedFields, setSelectedFields] = useState([]);
 
   const handleChange = (index, value, prop) => {
+    // Update the selectedFields state when the value of a selected field changes
     setFields((prevFields) => [
       ...prevFields.slice(0, index),
       { ...prevFields[index], [prop]: value },
       ...prevFields.slice(index + 1),
     ]);
+    // Update the fields state as usual
+    setSelectedFields((prevSelected) => [
+      ...prevSelected.slice(0, index),
+      { ...prevSelected[index], inputValue: value },
+      ...prevSelected.slice(index + 1),
+    ]);
+  };
+
+  const handleRemove = (field) => {
+    setScore(score - field.points);
+    setSelectedFields((prevSelected) =>
+      prevSelected.filter((selected) => selected.input !== field.input)
+    );
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const participant = {};
+    const participant = { firstName, lastName, email };
     selectedFields.forEach((field) => {
-      participant[field.input] = "";
+      participant[field.input] = field.inputValue;
     });
 
     const response = await fetch("/api/participants/", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(participant),
     });
     const data = await response.json();
 
     if (response.ok) {
       setError(null);
+      // Reset form fields
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setSelectedFields([]);
+      setScore(75);
     } else {
       setError(data.msg);
     }
@@ -132,8 +155,10 @@ const Home = () => {
               <textarea
                 required
                 title={field.title}
-                onChange={(e) => handleChange(index, e.target.value, "input")}
-                // value={field.input}
+                onChange={(e) =>
+                  handleChange(index, e.target.value, "inputValue")
+                }
+                value={field.inputValue}
                 className="form-control"
                 placeholder={field.title}
                 rows="3"
@@ -143,8 +168,10 @@ const Home = () => {
                 className="form-select"
                 title={field.title}
                 required
-                onChange={(e) => handleChange(index, e.target.value, "input")}
-                // value={field.input}
+                onChange={(e) =>
+                  handleChange(index, e.target.value, "inputValue")
+                }
+                value={field.inputValue}
               >
                 <option disabled>Choose your {field.title}</option>
                 {field.options.map((option) => (
@@ -158,12 +185,21 @@ const Home = () => {
                 type={field.type}
                 required
                 title={field.title}
-                onChange={(e) => handleChange(index, e.target.value, "input")}
-                // value={field.input}
+                onChange={(e) =>
+                  handleChange(index, e.target.value, "inputValue")
+                }
+                value={field.inputValue}
                 className="form-control"
                 placeholder={field.title}
               />
             )}
+            <button
+              className="btn btn-outline-secondary"
+              type="button"
+              onClick={() => handleRemove(field)}
+            >
+              Remove
+            </button>
           </div>
         ))}
         {error && (
