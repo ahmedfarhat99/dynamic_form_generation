@@ -125,7 +125,7 @@ const Participants = ({ loading, setLoading }) => {
 
   return (
     <div className="participants-container">
-      <h1>Participants</h1>
+      <h1>Participants{!loading && " (" + participantsList?.length + ")"}</h1>
       <div className="table-container">
         <table className="table table-hover">
           <thead>

@@ -115,6 +115,7 @@ const Home = () => {
             <input
               type="text"
               required
+              autoComplete="firstName"
               id="firstName"
               title="First Name"
               onChange={(e) => setFirstName(e.target.value)}
@@ -128,6 +129,7 @@ const Home = () => {
             <input
               type="text"
               required
+              autoComplete="lastName"
               id="lastName"
               title="Last Name"
               onChange={(e) => setLastName(e.target.value)}
@@ -142,7 +144,7 @@ const Home = () => {
           <input
             type="email"
             required
-            autoComplete="true"
+            autoComplete="email"
             id="email"
             title="Email"
             onChange={(e) => setEmail(e.target.value)}
@@ -157,6 +159,7 @@ const Home = () => {
             {field.type === "textarea" ? (
               <textarea
                 required
+                autoComplete={field.input}
                 id={field.input}
                 title={field.title}
                 onChange={(e) =>
@@ -172,6 +175,7 @@ const Home = () => {
                 className="form-select"
                 title={field.title}
                 required
+                autoComplete={field.input}
                 id={field.input}
                 onChange={(e) =>
                   handleChange(index, e.target.value, "inputValue")
@@ -189,6 +193,7 @@ const Home = () => {
               <input
                 type={field.type}
                 required
+                autoComplete={field.input}
                 id={field.input}
                 title={field.title}
                 onChange={(e) =>

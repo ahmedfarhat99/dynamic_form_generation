@@ -51,8 +51,10 @@ const PickFields = ({
               id="firstName"
               checked
               disabled
+              readOnly
+              autoComplete="off"
             />
-            <label className="form-check-label" htmlFor="firstName">
+            <label className="form-check-label opacity-100" htmlFor="firstName">
               <b>First Name</b> (25 points)
             </label>
           </div>
@@ -63,8 +65,10 @@ const PickFields = ({
               id="lastName"
               checked
               disabled
+              readOnly
+              autoComplete="off"
             />
-            <label className="form-check-label" htmlFor="lastName">
+            <label className="form-check-label opacity-100" htmlFor="lastName">
               <b>Last Name</b> (25 points)
             </label>
           </div>
@@ -75,24 +79,29 @@ const PickFields = ({
               id="email"
               checked
               disabled
+              readOnly
+              autoComplete="off"
             />
-            <label className="form-check-label" htmlFor="email">
+            <label className="form-check-label opacity-100" htmlFor="email">
               <b>Email</b> (25 points)
             </label>
           </div>
           {fields.map((field) => (
             <div key={field.input} className="form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id={field.input}
-                checked={selectedFields.some(
-                  (selected) => selected.input === field.input
-                )}
-                onChange={() => handleFieldToggle(field)}
-              />
-              <label className="form-check-label" htmlFor={field.input}>
-                <b>{field.title}</b> ({field.points} points)
+              <label>
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  id={field.input}
+                  checked={selectedFields.some(
+                    (selected) => selected.input === field.input
+                  )}
+                  onChange={() => handleFieldToggle(field)}
+                  autoComplete="off"
+                />
+                <span className="form-check-label" htmlFor={field.input}>
+                  <b>{field.title}</b> ({field.points} points)
+                </span>
               </label>
             </div>
           ))}
